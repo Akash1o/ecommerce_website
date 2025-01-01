@@ -1,4 +1,8 @@
 Sasto Bazaar 🛒
+
+
+
+
 Sasto Bazaar is an e-commerce platform built with React and Redux, designed to provide users with an intuitive and seamless shopping experience. This project includes:
 
 A user-friendly interface for browsing and purchasing products
