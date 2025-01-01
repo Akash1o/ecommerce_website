@@ -1,9 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function Header( {cartCount} ) {
+  const cartCounts = useSelector((state) => state.cart.totalQuantity);
   const navigate = useNavigate();
+  const handlehome = () => {
+    navigate('/')
+  }
+
   const handlleClickCart = () => {
     navigate('/cart')
   }
@@ -12,7 +18,8 @@ function Header( {cartCount} ) {
 <div className="w-full bg-white py-5 px-6 flex justify-between items-center">
 <div className="text-4xl font-bold flex items-center space-x-2 ml-9">
   <img src='/Photos/Vector.png' alt='logo' className='h-8 w-8 '/>
-<span className="text-green-700 ">Sasto-Bazaar</span> 
+<span onClick={handlehome}
+className="text-green-700 cursor-pointer ">Sasto-Bazaar</span> 
 </div>
 <nav>
 <ul className="flex space-x-8">
@@ -82,9 +89,9 @@ function Header( {cartCount} ) {
 <div className="relative"> 
 <span onClick={handlleClickCart}
 className="text-2xl text-gray-700 hover:text-bl}ue-500 cursor-pointer">🛒</span>
-          {cartCount > 0 && (
+          {cartCounts > 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center transform translate-x-3 translate-y-[-10px]">
-              {cartCount}
+              {cartCounts}
             </span>
           
           )}

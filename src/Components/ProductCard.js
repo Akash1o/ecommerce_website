@@ -1,91 +1,48 @@
 import { FaHeart, FaEye } from 'react-icons/fa';
-import { useOutletContext } from 'react-router-dom';
 
-
+import { useDispatch } from 'react-redux';
+import { addtoCart } from '../store/cartSlice';
 
 function ProductCard() {
-  const { handleCart } = useOutletContext();
+ 
+  const dispatch = useDispatch();
+  const products = [
+    { id: 1, name: 'Joystick', price: 5000, image: './Photos/game.png' },
+    { id: 2, name: 'Smartphone', price: 3000, image: './Photos/i.jpg' },
+    { id: 3, name: 'Laptop', price: 2000, image: 'https://images6.alphacoders.com/133/1338694.png' },
+    { id: 4, name: 'Item 4', price: 4500, image: './Photos/game.png' },
+    { id: 5, name: 'Item 5', price: 6000, image: './Photos/game.png' },
+  ];
+  const handletoCart = (product) => {
+    dispatch(addtoCart(product));
+  };
+
   return (
-    <div className=" mt-[32px] ml-[122px] flex space-x-5  align-center justify-center flex-wrap">
-      <div className="relative w-[230px] bg-green-300 shadow-lg rounded-lg overflow-hidden">
-        <img className="w-full h-[200px] object-cover" src="./Photos/game.png" alt="item1" />
-        <div className="absolute top-3 right-1 flex flex-col space-x-1  text-green-900 ">
-          <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px] " />
-          <FaEye className="text-xl cursor-pointer text-blue-500" />
+    <div className="mt-[32px] ml-[122px] flex space-x-5 align-center justify-center flex-wrap">
+      {products.map((product) => (
+        <div
+          key={product.id}
+          className="relative w-[230px] bg-green-300 shadow-lg rounded-lg overflow-hidden"
+        >
+          <img className="w-full h-[200px] object-cover" src={product.image} alt={product.name} />
+          <div className="absolute top-3 right-1 flex flex-col space-x-1 text-green-900">
+            <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px]" />
+            <FaEye className="text-xl cursor-pointer text-blue-500" />
+          </div>
+          <div className="p-5">
+            <button
+              className="font-semibold text-lg cursor-pointer hover:bg-green-200 align-center"
+              onClick={() => handletoCart(product)} // Pass product details
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
-        <div className="p-5 ">
-          <button className="font-semibold text-lg cursor-pointer hover:bg-green-200  align-center"
-            onClick={handleCart}
-          >Add to Cart</button>
-       
-        </div>
-    
-      </div>
-      
-      <div className="relative w-[180px] bg-green-300 shadow-lg rounded-lg overflow-hidden  ">
-        <img className="w-full h-[200px] object-cover" src="./Photos/i.jpg" alt="item1" />
-        <div className="absolute top-3 right-1 flex flex-col space-x-1  text-green-900 ">
-          <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px] " />
-          <FaEye className="text-xl cursor-pointer text-blue-500" />
-        </div>
-        <div className="p-7 ">
-          <button className="font-semibold text-lg cursor-pointer hover:bg-green-200  align-center"
-            onClick={handleCart}
-            >Add to Cart</button>
-       
-        </div>
-    
-      </div>
-
-      <div className="relative w-[230px] bg-white shadow-lg rounded-lg overflow-hidden">
-        <img className="w-full h-[200px] object-cover" src="https://images6.alphacoders.com/133/1338694.png" alt="item1" />
-        <div className="absolute top-3 right-1 flex flex-col space-x-1  text-green-900 ">
-          <FaHeart className="text-xl cursor-pointer text-white-500 mb-[12px] " />
-          <FaEye className="text-xl cursor-pointer text-blue-500" />
-        </div>
-        <div className="p-7 ">
-          <button className="font-semibold text-lg cursor-pointer hover:bg-green-200  align-center"
-            onClick={handleCart}
-          >Add to Cart</button>
-       
-        </div>
-    
-      </div>
-
-      <div className="relative w-[230px] bg-green-300 shadow-lg rounded-lg overflow-hidden">
-        <img className="w-full h-[200px] object-cover" src="./Photos/game.png" alt="item1" />
-        <div className="absolute top-3 right-1 flex flex-col space-x-1  text-green-900 ">
-          <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px] " />
-          <FaEye className="text-xl cursor-pointer text-blue-500" />
-        </div>
-        <div className="p-7 ">
-          <button className="font-semibold text-lg cursor-pointer hover:bg-green-200  align-center"
-            onClick={handleCart}
-          >Add to Cart</button>
-       
-        </div>
-    
-      </div>
-
-      
-
-      <div className="relative w-[230px] bg-green-300 shadow-lg rounded-lg overflow-hidden">
-        <img className="w-full h-[200px] object-cover" src="./Photos/game.png" alt="item1" />
-        <div className="absolute top-3 right-1 flex flex-col space-x-1  text-green-900 ">
-          <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px] " />
-          <FaEye className="text-xl cursor-pointer text-blue-500" />
-        </div>
-        <div className="p-7 ">
-          <button className="font-semibold text-lg cursor-pointer hover:bg-green-200  align-center"
-            onClick={handleCart}
-          >Add to Cart</button>
-       
-        </div>
-    
-      </div>
-
-      <div className='w-full mt-6 flex justify-center'>
-        <button className="bg-green-500 text-white p-2 rounded-lg w-[300px] hover:bg-slate-600 ">View More Products</button>
+      ))}
+      <div className="w-full mt-6 flex justify-center">
+        <button className="bg-green-500 text-white p-2 rounded-lg w-[300px] hover:bg-slate-600">
+          View More Products
+        </button>
       </div>
     </div>
   );
