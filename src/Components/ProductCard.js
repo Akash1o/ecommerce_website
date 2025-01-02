@@ -1,10 +1,8 @@
 import { FaHeart, FaEye } from 'react-icons/fa';
-
 import { useDispatch } from 'react-redux';
 import { addtoCart } from '../store/cartSlice';
 
 function ProductCard() {
- 
   const dispatch = useDispatch();
   const products = [
     { id: 1, name: 'Joystick', price: 5000, image: './Photos/game.png' },
@@ -13,12 +11,13 @@ function ProductCard() {
     { id: 4, name: 'Item 4', price: 4500, image: './Photos/game.png' },
     { id: 5, name: 'Item 5', price: 6000, image: './Photos/game.png' },
   ];
+
   const handletoCart = (product) => {
     dispatch(addtoCart(product));
   };
 
   return (
-    <div className="mt-[32px] ml-[122px] flex space-x-5 align-center justify-center flex-wrap">
+    <div className="mt-[32px] ml-[122px] flex flex-wrap justify-center gap-6">
       {products.map((product) => (
         <div
           key={product.id}
