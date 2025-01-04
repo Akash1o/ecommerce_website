@@ -8,46 +8,46 @@ function Home() {
  
 
   return (
-    <div className='flex flex-col h-[3300px]  '>
-     <div className='mt-[22px] ml-[82px] flex flex-col'>
-      <ul className='space-y-2' >
-        <li >Womans Fashion</li>
-        <li>Men's Fashion</li>
-        <li>Electronics</li>
-        <li></li>
-        <li>Home & Styles</li>
+    <div className='flex flex-col sm:h-[3300px] h-auto  '>
+    <div className="mt-6 ml-4 sm:ml-[82px]">
+    <ul className="space-y-2 text-sm sm:text-base mb-6">
+      <li>Womans Fashion</li>
+      <li>Men's Fashion</li>
+      <li>Electronics</li>
+      <li>Home & Styles</li>
       <li>Medicin</li>
       <li>Sports & Outdoor</li>
       <li>Baby's Toys</li>
       <li>Groceries & Pets</li>
       <li>Health & Beauty</li>
-      </ul>
-     </div>
-     <div className="ml-[310px] bg-black h-[282px] w-[850px] mt-[-270px] flex justify-center items-center overflow-hidden relative">
-      <img
-      src="./Photos/ipone.png"
-       className="h-[270px] object-contain transition-transform duration-500"
-       
-       
-        alt='pics'
-     
-      />
-    </div>
-    
-     <div   className="ml-[92px] mt-[52px] p-5 ">
-     <h2 className="  text-4xl text-red-500 font-bold  pt-3">Flash Sales</h2>
-     </div>
+    </ul>
+  </div>
+  <div className="ml-[310px] bg-black sm:h-[280px] sm:w-[820px] sm:mt-[-290px]  justify-center items-center overflow-hidden relative hidden sm:block">
+  <img
+    src="./Photos/ipone.png"
+    className="sm:h-[270px] h-[90px] object-contain transition-transform duration-500"
+    alt="pics"
+  />
+</div>
 
-     <div>
-      <ProductCard />
-     </div>
+
+    
+<div className="ml-4 mt-4 sm:ml-[92px] mb-[0px] sm:mt-[10px] p-3 sm:p-5">
+    <h2 className="text-2xl sm:mt-[90px] mt-2 sm:text-4xl text-red-600 font-bold text-center sm:text-center  sm:pt-3">
+      Flash Sales
+    </h2>
+  </div>
+
+  <div className="sm:px-4 sm:mb-9 ">
+    <ProductCard />
+  </div>
 
      <div className="mt-[52px]  ml-[82px]">
       <p className="text-purple-600">Categories</p>
       <h3 className="font-bold text-2xl">Browse By Category</h3>
 
      </div>
- <div className=" pb-3 ml-[82px] mt-[22px] flex flex-row gap-[55px] align-middle  ">
+ <div className=" pb-3 sm:ml-[129px] ml-[89px] sm:mr-[89px] mt-[22px] flex sm:flex-row sm:gap-[55px] align-middle flex-wrap gap-[20px]  ">
   <div className=" border-2  w-[170px] h-[145px] border-black  hover:bg-green-700 ">
     <img  className="h-[67px] w-[250px] object-contain  mt-[23px] "
      src="./Photos/phone.png" />
@@ -84,7 +84,7 @@ function Home() {
  </div>
 
  <h1 className="text-3xl font-bold ml-[82px] mt-[52px]">Explore Our Products</h1>
-  <div className="flex flex-row gap-[75px] align-middle  ml-[224px] mt-[22px]">
+  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-7  sm:ml-[224px] sm:mt-[22px]">
       <div className="bg-white p-4 shadow rounded-lg h-[224px] w-[178px] ">
         <img src="./Photos/sofa.jpg"
           className="mb-[25px] object-contain h-[147px]"
@@ -161,7 +161,7 @@ function Home() {
 
   </div>
 
-  <div className="flex flex-row gap-[75px]  align-middle  ml-[224px] mt-[75px]">
+  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-7 mt-[34px] sm:ml-[224px] sm:mt-[22px]">
       <div className="bg-white p-4 shadow rounded-lg h-[224px] w-[178px] ">
          <img src="./Photos/sofa.jpg"
           className="mb-[25px] object-contain h-[147px]"
@@ -247,20 +247,20 @@ function Home() {
 
 
 <div class="grid grid-cols-2 gap-4 p-2 ml-[96px] mr-[96px]">
-  <div class="col-span-1 bg-black text-white p-6 rounded-lg ">
+  <div class="sm:col-span-1 col-span-2 bg-black text-white sm:p-6 rounded-lg p-2 ">
     <img src="./Photos/ps.png" 
     className="object-contain pt-[34px]"
     />
     <h2 class="text-2xl font-bold pt-12">PlayStation 5</h2>
     <p class="text-sm mt-10 p-2">Black and White version of the PS5 coming out on sale.</p>
-    <button class=" hover:bg-orange-400 mt-4 px-4 py-2 bg-blue-500 text-white rounded">Shop Now</button>
+    <button class=" hover:bg-orange-400 mt-4 sm:px-4 sm:py-2 sm:w-[150px] w-[280px] py-2 bg-blue-500 text-white rounded">Shop Now</button>
   </div>
   <div class="col-span-1 grid grid-rows-2 gap-4">
 
-    <div class="bg-black text-white p-6 rounded-lg">
+    <div class="bg-black text-white sm:p-6 rounded-lg p-3 sm:w-[700px] w-[300px] ">
       <div className="flex flex-col">
       <img src="./Photos/women.png" 
-    className="object-contain  h-[190px] ml-[170px]  "
+    className="object-contain  sm:h-[190px] sm:ml-[170px]  h-[160px] w-[230px] ml-[20px]"
     />
       <h2 class="text-xl font-bold">Women's Collections</h2>
       <p class="text-sm mt-2">Featured woman collections that give 
@@ -269,27 +269,30 @@ function Home() {
         </div>
     
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="text-black bg-gray-300 p-6 rounded-lg ">
+    <div class="grid grid-cols-2 gap-4  ">
+      <div class="text-black bg-gray-300 sm:p-6 rounded-lg p-3 sm:h-[404px] h-[290px]">
         <img src="./Photos/speak.png "
         className="object-contain "
         />
         <h2 class="text-xl font-bold">Speakers</h2>
-        <p class="text-sm p-2 mt-2 font-bold">Amazon wireless speakers.</p>
+        <p class="text-sm sm:p-2 sm:mt-2 p-1 font-bold">Amazon wireless speakers.</p>
         <button class=" hover:bg-orange-400 mt-4 px-4 py-2 bg-blue-500 text-white rounded">Shop Now</button>
       </div>
-      <div class="bg-gray-800 text-white p-6 rounded-lg">
+      <div class="bg-gray-800 text-white sm:p-6 rounded-lg sm:h-[404px] h-[290px] p-4">
         <img src="./Photos/perfume.png"
           className="object-contain "
          />
-        <h2 class="text-xl font-bold mt-4">Perfume</h2>
-        <p class="text-sm mt-2 p-2 font-bold">GUCCI INTENSE OUD EDP.</p>
+        <h2 class="text-xl font-bold sm:mt-4 mt-2">Perfume</h2>
+        <p class="text-sm sm:mt-2 sm:p-2 mt-1    font-bold">GUCCI INTENSE OUD EDP.</p>
         <button class="mt-4 px-4 py-2 bg-blue-500 hover:bg-orange-400 text-white rounded">Shop Now</button>
       </div>
     </div>
   </div>
 </div>
-<div className="flex flex-row  justify-evenly align-center gap-y-6 mt-[155px] ">
+
+
+
+<div className="flex sm:flex-row  justify-evenly align-center sm:gap-y-6 sm:mt-[155px] mt-16 flex-col sm:mb-5 mb-9">
 <div className="flex flex-col items-center">
 <div className="w-17 h-[85px] rounded-full overflow-hidden bg-blue-300 justify-self-start">
   <img src="./Photos/delivery.png" alt="Profile" className="w-full h-full object-cover bg-black"/>
