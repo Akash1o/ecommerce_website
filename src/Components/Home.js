@@ -8,8 +8,8 @@ function Home() {
  
 
   return (
-    <div className='flex flex-col sm:h-[3300px] h-auto  '>
-    <div className="mt-6 ml-4 sm:ml-[82px]">
+    <div className='flex flex-col sm:h-[3300px] h-auto sm:ml-0 ml-6 '>
+    <div className="mt-6 ml-aut0 sm:ml-[82px]">
     <ul className="space-y-2 text-sm sm:text-base mb-6">
       <li>Womans Fashion</li>
       <li>Men's Fashion</li>
@@ -32,7 +32,7 @@ function Home() {
 
 
     
-<div className="ml-4 mt-4 sm:ml-[92px] mb-[0px] sm:mt-[10px] p-3 sm:p-5">
+<div className="ml- mt-4 sm:ml-[92px] mb-[0px] sm:mt-[10px] p-auto sm:p-5">
     <h2 className="text-2xl sm:mt-[90px] mt-2 sm:text-4xl text-red-600 font-bold text-center sm:text-center  sm:pt-3">
       Flash Sales
     </h2>
@@ -83,9 +83,9 @@ function Home() {
   </div>
  </div>
 
- <h1 className="text-3xl font-bold ml-[82px] mt-[52px]">Explore Our Products</h1>
-  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-7  sm:ml-[224px] sm:mt-[22px]">
-      <div className="bg-white p-4 shadow rounded-lg h-[224px] w-[178px] ">
+ <h1 className="sm:text-3xl text-2xl font-bold sm:ml-[82px] mt-[52px] ml-11 sm:mb-0 mb-[22px]">Explore Our Products</h1>
+  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-[54px] mr-[32px] sm:mr-0  sm:ml-[224px] sm:mt-[22px]">
+      <div className="bg-white p-4 shadow rounded-lg sm:h-[224px] w-[178px] sm:mr-0 mr-6  gap-3 sm:mb-[32px]">
         <img src="./Photos/sofa.jpg"
           className="mb-[25px] object-contain h-[147px]"
           alt="Product"/>
@@ -161,12 +161,12 @@ function Home() {
 
   </div>
 
-  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-7 mt-[34px] sm:ml-[224px] sm:mt-[22px]">
+  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-20 ml-[49px] mr-[23px] sm:mr-0 sm:ml-[224px] sm:mt-[22px] mt-[41px]">
       <div className="bg-white p-4 shadow rounded-lg h-[224px] w-[178px] ">
          <img src="./Photos/sofa.jpg"
           className="mb-[25px] object-contain h-[147px]"
           alt="Product"/>
-          <h2 className="text-1xl font-medium pb-6">Washing Machine</h2>
+          <h2 className="text-1xl font-medium pb-6">item</h2>
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> Rs.90000</p>
@@ -240,13 +240,13 @@ function Home() {
   </div>
 
   <div className="flex flex-row mt-[43px] justify-center ">
-      <button className="bg-blue-500 text-white p-3 mb-[12px] hover:bg-gray-700 rounded-lg mt-4">View More Products</button>
+      <button className="bg-blue-500 text-white p-3 mb-[12px] hover:bg-gray-700 rounded-lg mt-4 sm:ml-0 ml-[12px] sm:mr-0 mr-[62px]">View More Products</button>
       </div>
 
-      <h1 className=" ml-[98px] mt-[34px] mb-[32px] text-3xl font-bold text-red-400">New Arrival</h1>
+      <h1 className=" sm:ml-[98px] sm:mr-0 ml-[59px] mt-[34px] mb-[32px] text-3xl font-bold text-red-400">New Arrival</h1>
 
 
-<div class="grid grid-cols-2 gap-4 p-2 ml-[96px] mr-[96px]">
+<div class="grid grid-cols-2 gap-4 p-2 sm:ml-[96px] sm:mr-[96px] mr-[25px]">
   <div class="sm:col-span-1 col-span-2 bg-black text-white sm:p-6 rounded-lg p-2 ">
     <img src="./Photos/ps.png" 
     className="object-contain pt-[34px]"

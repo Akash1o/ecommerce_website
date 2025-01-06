@@ -17,7 +17,7 @@ function ProductCard() {
   };
 
   return (
-    <div className="sm:mt-[32px] ml-[122px] mt-[10px] flex flex-wrap justify-center gap-6">
+    <div className="sm:mt-[32px] ml-auto sm:ml-[122px] mt-[10px] flex flex-wrap justify-center sm:justify-center gap-6">
       {products.map((product) => (
         <div
           key={product.id}
