@@ -1,10 +1,32 @@
 import ProductCard from "./ProductCard";
-
-
+import { GrLinkNext ,GrLinkPrevious } from "react-icons/gr";
+import { useState } from "react";
 
 
 
 function Home() {
+  const images =[
+    "./Photos/laptop.jpg",
+    "./Photos/ipone.png",
+    "./Photos/adid.jpg",
+     "./Photos/key.png",
+  ];
+  
+  const [currentIndex ,setCurrentIndex] =useState(0)
+  
+  const prevSlide= () =>{
+     setCurrentIndex((prevIndex) =>
+       prevIndex === 0 ? images.length -1 :prevIndex -1
+    );
+  
+  };
+  
+  const nextSlide =() =>{
+     setCurrentIndex((prevIndex) =>
+      prevIndex === images.length -1 ? 0 : prevIndex + 1 
+     );
+    };
+  
  
 
   return (
@@ -22,13 +44,49 @@ function Home() {
       <li>Health & Beauty</li>
     </ul>
   </div>
-  <div className="ml-[310px] bg-black sm:h-[280px] sm:w-[820px] sm:mt-[-290px]  justify-center items-center overflow-hidden relative hidden sm:block">
-  <img
-    src="./Photos/ipone.png"
-    className="sm:h-[270px] h-[90px] object-contain transition-transform duration-500"
-    alt="pics"
-  />
-</div>
+
+  <div className="ml-[310px] bg-black sm:h-[280px] sm:w-[820px] sm:mt-[-290px] justify-center items-center overflow-hidden relative hidden sm:block">
+      <div
+        className="flex transition-transform duration-500"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        
+        }}
+      >
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Slide ${index + 1}`}
+            className="sm:h-[270px] h-[90px] w-[820px] object-contain flex-shrink-0"
+          />
+        ))}
+      </div>
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 text-2xl rounded-full "
+      >
+        <GrLinkPrevious/>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 rounded-full text-2xl"
+      >
+      <GrLinkNext/>
+      </button>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 w-2 rounded-full ${
+              currentIndex === index ? "bg-gray-800" : "bg-white"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+
 
 
     
