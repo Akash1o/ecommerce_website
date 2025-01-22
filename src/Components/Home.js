@@ -59,8 +59,9 @@ function Home() {
 
 
   const images =[
-    "./Photos/laptop.jpg",
+ 
     "./Photos/ipone.png",
+    "./Photos/laptop.jpg",
     "./Photos/adid.jpg",
      "./Photos/key.png",
   ];
@@ -86,15 +87,15 @@ function Home() {
     <div className='flex flex-col sm:h-[3300px] h-auto sm:ml-0 ml-6 '>
     <div className="mt-6 ml-aut0 sm:ml-[82px]">
     <ul className="space-y-2 text-sm sm:text-base mb-6">
-      <li>Womans Fashion</li>
-      <li>Men's Fashion</li>
-      <li>Electronics</li>
-      <li>Home & Styles</li>
-      <li>Medicin</li>
-      <li>Sports & Outdoor</li>
-      <li>Baby's Toys</li>
-      <li>Groceries & Pets</li>
-      <li>Health & Beauty</li>
+      <li className="hover:text-gray-500 cursor-pointer">Womans Fashion</li>
+      <li className="hover:text-red-800  cursor-pointer ">Men's Fashion</li>
+      <li className="hover:text-red-800  cursor-pointer ">Electronics</li>
+      <li className="hover:text-red-800  cursor-pointer ">Home & Styles</li>
+      <li className="hover:text-red-800  cursor-pointer ">Medicin</li>
+      <li className="hover:text-red-800  cursor-pointer ">Sports & Outdoor</li>
+      <li className="hover:text-red-800  cursor-pointer ">Baby's Toys</li>
+      <li className="hover:text-red-800  cursor-pointer "> Groceries & Pets</li>
+      <li className="hover:text-red-800  cursor-pointer ">Health & Beauty</li>
     </ul>
   </div>
 
