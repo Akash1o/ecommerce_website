@@ -21,18 +21,16 @@ function Cart() {
   const calculateTotal = () => {
     return calculateSubtotal() + calculateShipping();
   };
-  const checkinout = () => {
-     navigate('/checkout');
+
+  const ControlNavigate =(path)=>{
+     navigate(path);
   };
 
-  const returnShop = () => {
-    navigate('/');
-  };
-
+ 
   return (
     <div className="ml-[89px] flex flex-col mt-[34px] min-h-screen">
       <div className="flex flex-row">
-        <h1 onClick={returnShop} className="text-xl cursor-pointer">Home / </h1>
+        <h1 onClick={()=>ControlNavigate('/')} className="text-xl cursor-pointer">Home / </h1>
         <h1 className="ml-[8px] font-bold text-blue-600 text-xl">Cart</h1>
       </div>
 
@@ -60,7 +58,7 @@ function Cart() {
 
       <div className="flex justify-between ml-[76px] mr-[478px] mt-[20px]">
         <button
-          onClick={returnShop}
+         
           className="border-yellow-500 rounded-[3px] h-[45px] px-4 py-2 border-2 hover:bg-orange-200"
         >
           Return to Shop
@@ -88,7 +86,7 @@ function Cart() {
         <p className="inline-block border-b-2 border-gray-500 mb-[3px] ml-3 mr-3"> </p>
         <h1 className="ml-3">Total: Rs.{calculateTotal()}</h1>
         <p className="inline-block border-b-2 border-gray-500 mb-[3px] ml-3 mr-3"> </p>
-        <button onClick={checkinout}
+        <button onClick={()=>ControlNavigate("/checkout")}
          className="bg-green-500 text-white p-2 rounded-lg w-[240px] hover:bg-slate-600 ml-3 mr-2">
           Proceed to Checkout
         </button>

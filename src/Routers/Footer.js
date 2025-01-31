@@ -3,17 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 function Footer() {
   const navigate =useNavigate();
-  const login =() =>{
-    navigate('/signup')
-  }
 
-   const cart =()=>{
-    navigate('/cart')
-   }
-
-   const contact=()=>{
-    navigate('/contact')
-   }
+  
+ const ManageNavigate =(path)=>{
+    navigate(path);
+ }
+   
 
   return (
     <footer className="bg-black text-white py-8 px-4">
@@ -39,8 +34,8 @@ function Footer() {
         </div>
         <div className="flex flex-col gap-3 w-full md:w-1/5">
           <h2 className="text-2xl font-bold">Account</h2>
-          <p className="font-thin cursor-pointer" onClick={login}>Login/Register</p>
-          <p className="font-thin cursor-pointer" onClick={cart}>Cart</p>
+          <p className="font-thin cursor-pointer" onClick={()=>ManageNavigate('/signup')}>Login/Register</p>
+          <p className="font-thin cursor-pointer" onClick={()=>ManageNavigate('/cart')}>Cart</p>
           <p className="font-thin cursor-pointer">Wishlist</p>
           <p className="font-thin">Shop</p>
         </div>
@@ -49,7 +44,7 @@ function Footer() {
           <p className="font-thin">Privacy Policy</p>
           <p className="font-thin">Terms of Use</p>
           <p className="font-thin">FAQ</p>
-          <p className="font-thin cursor-pointer" onClick={contact}>Contact</p>
+          <p className="font-thin cursor-pointer" onClick={()=>ManageNavigate('/contact')}>Contact</p>
         </div>
         <div className="flex flex-col gap-3 w-full md:w-1/5">
           <h2 className="text-2xl font-bold">Download App</h2>
