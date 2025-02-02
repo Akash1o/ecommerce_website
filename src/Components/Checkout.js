@@ -23,16 +23,16 @@ function Checkout() {
 
 
   return (
-    <div className="ml-[89px] flex flex-col mt-[34px] min-h-screen">
+    <div className="ml-[89px] flex flex-col mt-[34px] min-h-screen ">
 
-<div className="flex flex-row">
+<div className="flex flex-row ">
         <h1 onClick={()=>handleNavigate('/')}  
         className="text-xl cursor-pointer">Home / </h1>
         <h1 onClick={()=>handleNavigate("/cart")}
         className="ml-[8px]   text-xl cursor-pointer">Cart /</h1>
         <h1 className="ml-[8px] font-bold text-blue-600 text-xl">Checkout</h1>
       </div>
-      <div className="ml-[138px] flex  mt-[30px] ">
+      <div className="ml-[138px] flex  mt-[30px]  ">
        <div>
         <form className='flex flex-col'>
           <h1 className='font-bold text-4xl mb-7'> 
@@ -80,6 +80,14 @@ function Checkout() {
              <TiTickOutline className='mt-1 h-5 w-5 bg-green-400' />
           </span>  
         </form>
+       </div>
+       <div className='ml-[78px] mt-[98px]'>
+        <div className='flex '>
+          <img src='./Photos/lap.png'
+          className='object-contain w-20 h-20' />
+          <h1>Laptop</h1>
+          <span> Rs.70000</span>
+        </div>
        </div>
    
         </div>
