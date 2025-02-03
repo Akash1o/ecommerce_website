@@ -7,6 +7,7 @@ function Checkout() {
     Navigate(path);
   
   }
+
   const[input ,setInput] =useState({
      FirstName:'',
      StreetAddress:'',
@@ -20,6 +21,12 @@ function Checkout() {
     setInput({ ...input, [name]: value });
   };
   
+  const [paymentMethod, setPaymentMethod] = useState('');
+
+  const handleChanges = (e) => {
+    setPaymentMethod(e.target.value);
+  };
+
 
 
   return (
@@ -81,13 +88,57 @@ function Checkout() {
           </span>  
         </form>
        </div>
-       <div className='ml-[78px] mt-[98px]'>
+       <div className='ml-[126px] mt-[98px]'>
         <div className='flex '>
           <img src='./Photos/lap.png'
           className='object-contain w-20 h-20' />
-          <h1>Laptop</h1>
-          <span> Rs.70000</span>
+          <h1 className=' ml-9 mt-auto mb-auto font-bold text-lg'>Laptop</h1>
+          <span  className=' ml-9 mt-auto mb-auto font-bold text-lg'> Rs.70000</span>
         </div>
+        <div className='flex '>
+          <img src='./Photos/lap.png'
+          className='object-contain w-20 h-20' />
+          <h1 className=' ml-9 mt-auto mb-auto font-bold text-lg'>Laptop</h1>
+          <span  className=' ml-9 mt-auto mb-auto font-bold text-lg'> Rs.70000</span>
+        </div>
+         <div className='mt-7 flex justify-between'> 
+          <h1 className='text-xl font-semibold'>SubTotal: </h1>
+          <span className='text-xl font-semibold'> Rs.1900</span>
+         
+         </div>
+         <div>
+         <p className=" block border-b-2 border-gray-500 mb-[4px] "> </p>
+         </div>
+        
+
+         <div className='mt-7 flex justify-between'> 
+          <h1 className='text-xl font-semibold'>Shipping: </h1>
+          <span className='text-xl font-semibold'> Free</span>
+         </div>
+         <div>
+         <p className=" block border-b-2 border-gray-500 mb-[4px] "> </p>
+         </div>
+        
+         <div className='mt-7 flex justify-between'> 
+          <h1 className='text-xl font-semibold'>Total: </h1>
+          <span className='text-xl font-semibold'> Rs.1900</span>
+         
+         </div>
+         <div>
+      <label htmlFor="payment-method">Choose Payment Method: </label>
+      <select
+        id="payment-method"
+        value={paymentMethod}
+        onChange={handleChange}
+      >
+        <option value="">Select a payment method</option>
+        <option value="bank-cash-on-delivery">Bank Cash on Delivery</option>
+        <option value="esewa">eSewa</option>
+      </select>
+
+    
+    </div>
+
        </div>
    
         </div>
