@@ -21,11 +21,9 @@ function Checkout() {
     setInput({ ...input, [name]: value });
   };
   
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const [selectedMethod, setSelectedMethod] = useState("bank");
 
-  const handleChanges = (e) => {
-    setPaymentMethod(e.target.value);
-  };
+
 
 
 
@@ -124,19 +122,32 @@ function Checkout() {
           <span className='text-xl font-semibold'> Rs.1900</span>
          
          </div>
-         <div>
-      <label htmlFor="payment-method">Choose Payment Method: </label>
-      <select
-        id="payment-method"
-        value={paymentMethod}
-        onChange={handleChange}
-      >
-        <option value="">Select a payment method</option>
-        <option value="bank-cash-on-delivery">Bank Cash on Delivery</option>
-        <option value="esewa">eSewa</option>
-      </select>
-
+         <div className="flex flex-col gap-6 mt-4">
     
+      <div
+        className={`flex items-center cursor-pointer space-x-3 ${
+          selectedMethod === "bank" ? "text-black font-bold" : "text-gray-600"
+        }`}
+        onClick={() => setSelectedMethod("bank")}
+      >
+        <div className="w-6 h-6 border-2 border-black rounded-full flex items-center justify-center">
+          {selectedMethod === "bank" && <div className="w-3 h-3 bg-black rounded-full"></div>}
+        </div>
+        <span>Bank</span>
+      </div>
+
+   
+      <div
+        className={`flex items-center cursor-pointer space-x-3 ${
+          selectedMethod === "cod" ? "text-black font-bold" : "text-gray-600"
+        }`}
+        onClick={() => setSelectedMethod("cod")}
+      >
+        <div className="w-6 h-6 border-2 border-black rounded-full flex items-center justify-center">
+          {selectedMethod === "cod" && <div className="w-3 h-3 bg-black rounded-full"></div>}
+        </div>
+        <span>Cash on Delivery</span>
+      </div>
     </div>
 
        </div>
