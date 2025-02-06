@@ -35,7 +35,7 @@ function Header({ cartCount }) {
             menuOpen ? 'block' : 'hidden'
           }`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8">
+          <ul className="flex flex-col md:flex-row md:space-x-8 ml-7">
             <li>
               <NavLink
                 to="/"
@@ -70,6 +70,18 @@ function Header({ cartCount }) {
                 }
               >
                 About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-blue-500 text-[19px] font-bold border-b-2 border-blue-500'
+                    : 'text-gray-700 hover:text-blue-500 text-[19px] font-bold'
+                }
+              >
+                Cart
               </NavLink>
             </li>
             <li>

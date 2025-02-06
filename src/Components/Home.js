@@ -53,48 +53,49 @@ function Home() {
       <li className="hover:text-red-800  cursor-pointer ">Health & Beauty</li>
     </ul>
   </div>
+  <div className="ml-[310px] md:mt-[-250px] bg-black lg:h-[280px] sm:w-[820px] lg:mt-[-290px] justify-center items-center overflow-hidden relative hidden md:block xl:block z-10">
 
-  <div className="ml-[310px] bg-black sm:h-[280px] sm:w-[820px] sm:mt-[-290px] justify-center items-center overflow-hidden relative hidden sm:block">
-      <div
-        className="flex transition-transform duration-500"
-        style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
-        
-        }}
-      >
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Slide ${index + 1}`}
-            className="sm:h-[270px] h-[90px] w-[820px] object-contain flex-shrink-0"
-          />
-        ))}
-      </div>
+  <div
+    className="flex transition-transform duration-500"
+    style={{
+      transform: `translateX(-${currentIndex * 100}%)`,
+    }}
+  >
+    {images.map((src, index) => (
+      <img
+        key={index}
+        src={src}
+        alt={`Slide ${index + 1}`}
+        className="sm:h-[270px] h-[90px] w-[820px] object-contain flex-shrink-0"
+      />
+    ))}
+  </div>
+  <button
+    onClick={prevSlide}
+    className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 text-2xl rounded-full"
+  >
+    <GrLinkPrevious />
+  </button>
+  <button
+    onClick={nextSlide}
+    className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 rounded-full text-2xl"
+  >
+    <GrLinkNext />
+  </button>
+  <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+    {images.map((_, index) => (
       <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 text-2xl rounded-full "
-      >
-        <GrLinkPrevious/>
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-4 rounded-full text-2xl"
-      >
-      <GrLinkNext/>
-      </button>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 w-2 rounded-full ${
-              currentIndex === index ? "bg-gray-800" : "bg-white"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
+        key={index}
+        onClick={() => setCurrentIndex(index)}
+        className={`h-2 w-2 rounded-full ${
+          currentIndex === index ? "bg-gray-800" : "bg-white"
+        }`}
+      />
+    ))}
+  </div>
+</div>
+
+
 
 
 
@@ -114,7 +115,7 @@ function Home() {
       <h3 className="font-bold text-2xl">Browse By Category</h3>
 
      </div>
- <div className=" pb-3 sm:ml-[129px] ml-[89px] sm:mr-[89px] mt-[22px] flex sm:flex-row sm:gap-[55px] align-middle flex-wrap gap-[20px]  ">
+ <div className=" pb-3 ml-[134px]  mr-[89px] mt-[22px] flex lg:flex-row  lg:gap-[55px] align-middle flex-wrap gap-[20px]  ">
   <div onClick={()=>ManageNavigate('/phones')}
   className=" border-2  w-[170px] h-[145px] border-black  hover:bg-green-700  ">
     <img  className="h-[67px] w-[250px] object-contain  mt-[23px] "
@@ -157,8 +158,8 @@ function Home() {
  </div>
 
  <h1 className="sm:text-3xl text-2xl font-bold sm:ml-[82px] mt-[52px] ml-11 sm:mb-0 mb-[22px]">Explore Our Products</h1>
-  <div className="flex sm:flex-row sm:gap-[75px] align-middle flex-wrap gap-16 ml-[54px] mr-[32px] sm:mr-0  sm:ml-[224px] sm:mt-[22px]">
-      <div className="bg-white p-4 shadow rounded-lg sm:h-[224px] w-[178px] sm:mr-0 mr-6  gap-3 sm:mb-[32px]">
+  <div className="flex sm:flex-row gap-[75px] align-middle flex-wrap lg:gap-16  mr-[32px] lg:mr-0  lg:ml-[224px] sm:mt-[22px]">
+      <div className="bg-white p-4 shadow rounded-lg lg:h-[224px] w-[178px]  sm:mr-0 mr-6  gap-3 sm:mb-[32px]">
         <img src="./Photos/sofa.jpg"
           className="mb-[25px] object-contain h-[147px]"
           alt="Product"/>

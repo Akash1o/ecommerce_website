@@ -28,13 +28,13 @@ function Cart() {
 
  
   return (
-    <div className="ml-[89px] flex flex-col mt-[34px] min-h-screen">
+    <div className="ml-[5px] flex flex-col mt-[34px] min-h-screen lg:ml-[89px] ">
       <div className="flex flex-row">
         <h1 onClick={()=>ControlNavigate('/')} className="text-xl cursor-pointer">Home / </h1>
         <h1 className="ml-[8px] font-bold text-blue-600 text-xl">Cart</h1>
       </div>
 
-      <div className="ml-[138px] flex flex-row mt-[20px] h-[50px] justify-evenly w-[820px] bg-white border p-3 border-gray-300 rounded-[3px]">
+      <div className="ml-[8px] lg:ml-[138px] lg:flex-row  flex  mt-[20px] lg:h-[50px] h-[40px] justify-evenly lg:w-[820px] w-screen bg-white border p-3 border-gray-300 rounded-[3px]">
         <h1>Product</h1>
         <h1>Price</h1>
         <h1>Quantity</h1>
@@ -44,15 +44,15 @@ function Cart() {
       {cartItems.map((item) => (
         <div
           key={item.id}
-          className="ml-[138px] flex flex-row mt-[29px] gap-x-36 h-[70px] w-[820px] bg-white border p-3 border-gray-300 rounded-[3px]"
+          className="lg:ml-[138px] ml-3 flex flex-row mt-[29px] gap-x-36 lg:h-[70px] h-[59px] lg:w-[820px] w-screen bg-white border p-3 border-gray-300 rounded-[3px]"
         >
-          <div className="flex flex-row ml-[89px]">
-            <img className="w-[40px] h-[50px] object-contain" src={item.image} alt={item.name} />
-            <span className="text-sm mt-[9px]">{item.name}</span>
+          <div className="flex flex-row lg:ml-[89px] ml-[6px]">
+            <img className="lg:w-[40px] lg:h-[50px] w-[30px]  object-contain" src={item.image} alt={item.name} />
+            <span className="text-sm mt-[9px] lg:pr-0 pr-4">{item.name}</span>
           </div>
-          <h1>Rs.{item.price}</h1>
+          <h1 className='lg:pr-0 pr-4 lg:mr-0 '>Rs.{item.price}</h1>
           <h1>{item.quantity}</h1>
-          <h1 className="pr-[400px]">Rs.{item.price * item.quantity}</h1>
+          <h1 className="lg:pr-[400px]  lg:pl-0  ">Rs.{item.price * item.quantity}</h1>
         </div>
       ))}
 
