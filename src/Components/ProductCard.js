@@ -24,9 +24,9 @@ function ProductCard() {
   };
 
   return (
-    <div className="sm:mt-[32px] ml-auto sm:ml-[122px] lg:mt-[10px] mt-[32px] flex flex-wrap justify-center sm:justify-center gap-6">
+    <div className="sm:mt-[37px] ml-auto sm:ml-[122px] lg:mt-[10px] mt-[33px]  tab:mt-[5px] flex flex-wrap justify-center tab:justify-center sm:justify-center gap-6">
       {products.map((product) => (
-        <div key={product.id} className="relative lg:w-[230px] w-[150px] lg:h-[260px] bg-green-300 shadow-lg rounded-lg overflow-hidden">
+        <div key={product.id} className="relative tab:w-[100px] tab:h-[190px] lg:w-[230px] w-[150px] lg:h-[260px] bg-green-300 shadow-lg rounded-lg overflow-hidden">
           <img className="w-full lg:h-[200px] h-[100px] object-cover" src={product.image} alt={product.name} />
           <div className="absolute top-3 right-1 flex flex-col space-x-1 text-green-900">
             <FaHeart className="text-xl cursor-pointer text-red-500 mb-[12px]" />

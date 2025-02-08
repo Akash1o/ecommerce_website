@@ -2,9 +2,18 @@ import ProductCard from "./ProductCard";
 import { GrLinkNext ,GrLinkPrevious } from "react-icons/gr";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 
 function Home() {
+  const [value, setValue] = useState(4);
+  const [value1, setValue1] = useState(3);
+  const [value2, setValue2] = useState(1);
+  const [value3, setValue3] = useState(2);
+  const [value4, setValue4] = useState(1);
+  const [value5, setValue5] = useState(3);
+  const [value6, setValue6] = useState(5);
+  const [value7, setValue7] = useState(4);
   const Navigate =useNavigate();
 
   const ManageNavigate =(path)=>{
@@ -53,7 +62,7 @@ function Home() {
       <li className="hover:text-red-800  cursor-pointer ">Health & Beauty</li>
     </ul>
   </div>
-  <div className="ml-[310px] md:mt-[-250px] bg-black lg:h-[280px] sm:w-[820px] lg:mt-[-290px] justify-center items-center overflow-hidden relative hidden md:block xl:block z-10">
+  <div className="ml-[310px] tab:mt-[-0px] bg-black lg:h-[280px] tab:h-[100px] sm:w-[820px] lg:mt-[-290px] justify-center items-center overflow-hidden relative hidden tab:block xl:block z-10">
 
   <div
     className="flex transition-transform duration-500"
@@ -66,7 +75,7 @@ function Home() {
         key={index}
         src={src}
         alt={`Slide ${index + 1}`}
-        className="sm:h-[270px] h-[90px] w-[820px] object-contain flex-shrink-0"
+        className="sm:h-[270px] h-[90px] w-[820px] tab:h-[400px] object-contain flex-shrink-0"
       />
     ))}
   </div>
@@ -100,24 +109,24 @@ function Home() {
 
 
     
-<div className="ml- mt-4 sm:ml-[92px] mb-[0px] sm:mt-[10px] p-auto sm:p-5">
+<div className=" mt-4 sm:ml-[92px] mb-[0px] sm:mt-[10px] p-auto sm:p-5 tab:mt-8">
     <h2 className="text-2xl sm:mt-[90px] mt-2 sm:text-4xl text-red-600 font-bold text-center sm:text-center  sm:pt-3">
       Flash Sales
     </h2>
   </div>
 
-  <div className="sm:px-4 sm:mb-9 ">
+  <div className="sm:px-4 sm:mb-9  tab:mt-5">
     <ProductCard />
   </div>
 
-     <div className="mt-[52px]  ml-[82px]">
+     <div className="mt-[52px]  ml-[82px] tab:mt-[22px]">
       <p className="text-purple-600">Categories</p>
       <h3 className="font-bold text-2xl">Browse By Category</h3>
 
      </div>
- <div className=" pb-3 ml-[134px]  mr-[89px] mt-[22px] flex lg:flex-row  lg:gap-[55px] align-middle flex-wrap gap-[20px]  ">
+ <div className=" pb-3 ml-[134px] tab:ml-[88px] tab:mr-auto tab:pl-auto tab:pr-auto  mr-[89px] mt-[22px] tab:mt-2 flex lg:flex-row tab:flex-row   lg:gap-[55px] align-middle flex-wrap gap-[20px] tab:gap-[40px]  ">
   <div onClick={()=>ManageNavigate('/phones')}
-  className=" border-2  w-[170px] h-[145px] border-black  hover:bg-green-700  ">
+  className=" border-2  w-[170px] h-[145px]  border-black  hover:bg-green-700  ">
     <img  className="h-[67px] w-[250px] object-contain  mt-[23px] "
      src="./Photos/phone.png" />
     <p className="text-center mt-[22px]"> Phones</p>
@@ -157,24 +166,34 @@ function Home() {
   </div>
  </div>
 
- <h1 className="sm:text-3xl text-2xl font-bold sm:ml-[82px] mt-[52px] ml-11 sm:mb-0 mb-[22px]">Explore Our Products</h1>
-  <div className="flex sm:flex-row gap-[75px] align-middle flex-wrap lg:gap-16  mr-[32px] lg:mr-0  lg:ml-[224px] sm:mt-[22px]">
-      <div className="bg-white p-4 shadow rounded-lg lg:h-[224px] w-[178px]  sm:mr-0 mr-6  gap-3 sm:mb-[32px]">
-        <img src="./Photos/sofa.jpg"
-          className="mb-[25px] object-contain h-[147px]"
-          alt="Product"/>
-          <h2 className="text-1xl font-medium pb-6">Washing Machine</h2>
-         <div className="flex flex-row">
-        
-          <p className="text-sm text-gray-500 pt-1"> $500</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
-          <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
-          </div>
-          
+ <h1 className="sm:text-3xl text-2xl font-bold sm:ml-[82px] tab:ml-[95px] mt-[52px] ml-11 sm:mb-0 mb-[22px] tab:mb-[12px]">Explore Our Products</h1>
+  <div className="flex sm:flex-row gap-[75px] tab:gap-[55px] tab:flex-row tab:mr-auto tab:ml-auto align-middle flex-wrap lg:gap-16  mr-[32px] lg:mr-0  lg:ml-[224px] sm:mt-[22px]">
+ 
+  <div className="bg-white p-4 shadow rounded-lg lg:h-[224px] w-[178px] tab:h-[221px] sm:mr-0 mr-6 gap-3 sm:mb-[32px]">
+      <img
+        src="./Photos/sofa.jpg"
+        className="mb-[25px] object-contain h-[147px]"
+        alt="Product"
+      />
+      <h2 className="text-1xl font-medium pb-6">Washing Machine</h2>
+      <div className="flex flex-row">
+        <p className="text-sm text-gray-500 pt-1">$500</p>
+        <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
+        <span className="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
       </div>
+    </div>
+
 
       <div className="bg-white p-4 shadow rounded-lg h-[224px] w-[178px] ">
         <img src="./Photos/sofa.jpg"
@@ -184,10 +203,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> $500</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value1}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue1(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
           </div>
           
@@ -202,10 +229,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> Rs.5000</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value2}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue2(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
           </div>
           
@@ -220,10 +255,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> Rs.7000</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value3}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue3(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(135)</span>
           </div>
           
@@ -244,10 +287,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> Rs.90000</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value4}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue4(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
           </div>
           
@@ -261,10 +312,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> Rs.500000000</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value5}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue5(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
           </div>
           
@@ -279,10 +338,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> $500</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value6}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue6(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(35)</span>
           </div>
           
@@ -297,10 +364,18 @@ function Home() {
          <div className="flex flex-row">
         
           <p className="text-sm text-gray-500 pt-1"> $100</p>
-          <div className=" items-center ">
-             <div className=" text-yellow-400 "/>
-             ⭐⭐⭐⭐
-          </div>
+          <div className="items-center">
+          <Rating
+            name="product-rating"
+            value={value7}
+            precision={0.5}
+              onChange={(event, newValue)=>{
+                setValue7(newValue);
+              }}
+            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+            icon={<StarIcon fontSize="inherit" />}
+          />
+        </div>
           <span class="text-gray-500 text-sm ml-2 pt-[3px]">(135)</span>
           </div>
           
