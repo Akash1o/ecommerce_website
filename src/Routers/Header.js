@@ -18,9 +18,9 @@ function Header({ cartCount }) {
 
   return (
     <header className="shadow sticky z-50 top-0 bg-white">
-      <div className="w-full py-5 px-6 flex justify-between items-center">
-        <div className="text-4xl font-bold flex items-center space-x-2">
-          <img src="/Photos/Vector.png" alt="logo" className="h-8 w-8" />
+      <div className="w-full py-5 lap:py-6 tab:py-2 px-6 lap:px-6 tab:px-5 flex justify-between items-center">
+        <div className="text-4xl lap:text-4xl tab:text-2xl font-bold flex items-center space-x-2">
+          <img src="/Photos/Vector.png" alt="logo" className="h-8 w-8 lap:h-8 lap:w-8 tab:h-6 tab:w-6" />
           <span onClick={handleHome} className="text-green-700 cursor-pointer">
             Sasto-Bazaar
           </span>
@@ -35,14 +35,14 @@ function Header({ cartCount }) {
             menuOpen ? 'block' : 'hidden'
           }`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8 ml-7">
+          <ul className="flex flex-col md:flex-row  ml-7 lap:ml-7 tab:space-x-4 lap:space-x-8 tab:ml-4">
             <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-500 text-[19px] font-bold border-b-2 border-blue-500'
-                    : 'text-gray-700 hover:text-blue-500 text-[19px] font-bold'
+                    : 'text-gray-700 hover:text-blue-500 text-[19px] lap:text-[19px] font-bold'
                 }
               >
                 Home
